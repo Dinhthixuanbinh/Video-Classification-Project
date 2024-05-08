@@ -1,6 +1,7 @@
 import os
 import torch
 from PIL import Image
+from torch.utils.data import Dataset
 
 class VideoDataset(Dataset):
     def __init__ (self, root_dir, phase= "train", transform = None, n_frames = None):
@@ -37,7 +38,7 @@ class VideoDataset(Dataset):
                       ),
                     )
                 if self.n_frames:
-                    frames = self._uniform_sample(frames, self.n_frames)
+                    frames = self._unifrom_sample(frames, self.n_frames)
 
                 videos.append(frames)
                 labels.append(class_id)

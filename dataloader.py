@@ -16,16 +16,16 @@ transform = transforms.Compose(
 
 # Load dataset
 train_dataset = VideoDataset(
-    root_dir= "./dataset/rwf-2000", phase = "train", 
+    root_dir= "./rwf-2000", phase = "train", 
     transform=transform , n_frames= MAX_LEN
 )
 
 val_dataset = VideoDataset(
-    root_dir= "./dataset/rwf-2000", phase = "val", 
+    root_dir= "./rwf-2000", phase = "val", 
     transform=transform , n_frames= MAX_LEN
 )
 # Count number of cpus
-cpus = os.cpu_conut()
+cpus = os.cpu_count()
 print(f"Number of cpus: {cpus}")
 
  # Create data loaders
