@@ -1,5 +1,5 @@
 from  torchvision import transforms 
-from VideoDataset import VideoDataset
+from dataset import VideoDataset
 from torch.utils.data import DataLoader
 
 import os

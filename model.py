@@ -1,7 +1,7 @@
 import torch.nn as nn
 from transformers import VivitConfig, VivitForVideoClassification
 
-class Model(nn.Moude):
+class Model(nn.Module):
     def __init__(self, num_classes = 2, image_size = 224, num_frames = 15):
 
         super(Model, self). __init__()
