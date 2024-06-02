@@ -3,9 +3,11 @@ Video classification is an important problem in computer vision and artificial i
 be trained on large, diverse data sets and often have to handle challenges such as environmental fluctuations, camera angle changes, and background diversity. behavior and interaction in video.
 ## Dataset RWF2000 - violence detection
 RWF2000 is a dataset on the problem of violence detection (detecting violent behavior), classifying videos based on two classes of fight or non-fight behavior corresponding to violent behavior in the video. Dataset includes 2000 videos, each video is 5 seconds long and recorded at 30 FPS corresponding to 300,000 frames.
+
+
 <img src=".images/data.jpg">
 
-### Data structure
+## Data structure
 ```
        dataset/rwf-2000
            train/
@@ -20,3 +22,6 @@ RWF2000 is a dataset on the problem of violence detection (detecting violent beh
                 Fight/
                 NonFight/    
    ```
+## Video ViT (ViViT)
+
+<img src=".images/ViViT.jpg">
