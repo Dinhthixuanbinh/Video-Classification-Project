@@ -5,7 +5,7 @@ be trained on large, diverse data sets and often have to handle challenges such 
 RWF2000 is a dataset on the problem of violence detection (detecting violent behavior), classifying videos based on two classes of fight or non-fight behavior corresponding to violent behavior in the video. Dataset includes 2000 videos, each video is 5 seconds long and recorded at 30 FPS corresponding to 300,000 frames.
 
 
-<img src=".images/data.jpg">
+<img src="./img/data.jpg">
 
 ## Data structure
 ```
@@ -24,4 +24,4 @@ RWF2000 is a dataset on the problem of violence detection (detecting violent beh
    ```
 ## Video ViT (ViViT)
 
-<img src=".images/ViViT.jpg">
+<img src="./img/ViViT.jpg">
