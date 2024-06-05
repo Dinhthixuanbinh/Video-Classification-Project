@@ -1,3 +1,16 @@
+import time
+import torch
+import logging
+from tqdm import tqdm
+logging.getLogger().setLevel(logging.INFO)
+logging.basicConfig(format="%(message)s", level=logging.INFO)
+LOGGER = logging.getLogger("Torch-Cls")
+seed = 123
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
 def colorstr(*input):
     *args, string = input if len(input) > 1 else ("blue", "bold", input[0])
     colors = {
