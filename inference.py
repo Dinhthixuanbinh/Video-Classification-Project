@@ -43,14 +43,24 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 trained_model = train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs=NUM_EPOCHS, device=DEVICE)
 
-# Define a predict function
+# # Define a predict function
+# def predict(model, data_loader, device):
+#     model.eval()
+#     predictions = []
+#     with torch.no_grad():
+#         for data in data_loader:
+#             data = data.to(device)
+#             output = model(data)
+#             _, predicted = torch.max(output, 1)
+#             predictions.extend(predicted.cpu().numpy())
+#     return predictions
 def predict(model, data_loader, device):
     model.eval()
     predictions = []
     with torch.no_grad():
-        for data in data_loader:
-            data = data.to(device)
-            output = model(data)
+        for inputs, _ in data_loader:  # iterate over data and labels, but ignore labels
+            inputs = inputs.to(device)
+            output = model(inputs)
             _, predicted = torch.max(output, 1)
             predictions.extend(predicted.cpu().numpy())
     return predictions
