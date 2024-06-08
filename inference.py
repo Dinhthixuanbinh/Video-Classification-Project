@@ -68,3 +68,27 @@ def predict(model, data_loader, device):
 # Make predictions on the validation set
 val_predictions = predict(trained_model, val_loader, DEVICE)
 print("Validation predictions:", val_predictions)
+
+# def predict(model, data_loader, device, dataset):
+#     model.eval()
+#     predictions = []
+#     labels = []
+#     image_names = []
+#     with torch.no_grad():
+#         for inputs, labels_batch in data_loader:  # iterate over data and labels
+#             inputs = inputs.to(device)
+#             output = model(inputs)
+#             _, predicted = torch.max(output, 1)
+#             predictions.extend(predicted.cpu().numpy())
+#             labels.extend(labels_batch.cpu().numpy())
+#             image_names.extend([dataset.video_names[i] for i in range(labels_batch.shape[0])])  # get the image names from the dataset
+#     return predictions, labels, image_names
+
+# # Make predictions on the validation set
+# val_predictions, val_labels, val_image_names = predict(trained_model, val_loader, DEVICE, val_dataset)
+# print("Validation predictions:")
+# for i, (prediction, label, image_name) in enumerate(zip(val_predictions, val_labels, val_image_names)):
+#     print(f"Image: {image_name}, Prediction: {prediction}, Label: {label}")
+#     plt.imshow(val_dataset[i][0].permute(1, 2, 0))  # display the image
+#     plt.title(f"Prediction: {prediction}, Label: {label}")
+#     plt.show()
